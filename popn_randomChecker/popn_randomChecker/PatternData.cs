@@ -2,10 +2,13 @@
 
 namespace popn_randomChecker
 {
+    //同時押しのデータを格納するクラス
     class PatternData
     {
-
+        //bool[]型とint型のデーｔ
+        //bool[] [9]の配列　ポップ君の落ちてくる場所をtrue　それ以外はfalse
         public bool[] boolArrayData { get; protected set; }
+        //int ポップ君の落ちてくる場所の番号　例：123,19
         public int intData { get; protected set; }
         //繰り返される回数
         public int count { get; protected set; } = 1;
