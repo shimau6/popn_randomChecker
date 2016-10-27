@@ -11,7 +11,6 @@ namespace popn_randomChecker
         }
 
         //.txtのあるURLを入れたらList<PatternData>が返ってくるやつ
-        //ねむくなってきた
         public List<PatternData> ConvertToList(string textUrl)
         {
             List<PatternData> list = new List<PatternData>();
@@ -20,6 +19,7 @@ namespace popn_randomChecker
                 //読み込んだ.txtの内容を一行ずつ読み込む
                 while (sr.Peek() > -1)
                 {
+                    //重複してないパターンをリストに加える
                     int num = int.Parse(sr.ReadLine());
                     if(hasSamePattern(num,list) == false)
                     {
@@ -36,6 +36,7 @@ namespace popn_randomChecker
         {
             foreach(var r in list)
             {
+                //isSameData使って欲しいおねがい
                 if (r.isSameData(num))
                 {
                     return true;
