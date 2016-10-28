@@ -8,26 +8,24 @@ namespace popn_randomChecker
     {
         static void Main(string[] args)
         {
-            //args[0]で入力されたファイルのテキストを読み取ってこんばーと
+            string input = @"C:\Users\shimau6\Desktop\murioshi.txt";
+            string output = @"C:\Users\shimau6\Desktop\tmp.txt";
             var cvt = new ConvertTextClass();
-            var pat = cvt.ConvertToList(args[0]);
+            var pat = cvt.ConvertToList(input);
 
-            //乱のすべてのパターンを試してそれぞれの無理押しの回数をカウントする
             var ranche = new RandomChecker();
             var res = ranche.checkMurioshiCount(pat);
 
-            //無理押し回数の少ない順にオーダー
             var wei = res.OrderBy(r => r.Patterns.Count).ToList();
 
-            //args[1]にそれを出力する
             System.IO.StreamWriter sw = new System.IO.StreamWriter(
-            args[1],
+            output,
             false,
             System.Text.Encoding.GetEncoding("shift_jis"));
+            sw.WriteLine("配置,無理押し回数,無理押し");
             for (int i = 0; i < wei.Count(); i++)
             {
                 sw.WriteLine(wei[i].ToString());
-
             }
             sw.Close();
         }
