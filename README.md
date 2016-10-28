@@ -1,5 +1,7 @@
 # popn_randomChecker  
 ポップンのランダムで出る無理押し数を全探索でがんばって探すやつです。  
+ソフトのダウンロードは下記URLから
+https://box.yahoo.co.jp/guest/viewer?sid=box-l-7huvxd4fcapywxb5ou3b3htjea-1001&uniqid=c4beaedd-9296-4e56-823e-67e88da0324a&viewtype=detail
 ___________________________
 *使い方  
 Samplesに入っているMurioshiCheck.exeをコマンドプロンプトから起動  
