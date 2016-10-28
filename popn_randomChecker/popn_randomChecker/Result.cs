@@ -8,8 +8,10 @@ namespace popn_randomChecker
 {
     class Result
     {
-        public int ramPattern;
-        public List<int> Patterns = new List<int>();
+        //無理押しチェッカーで得られた結果を格納するだけ
+        
+        public int ramPattern; //ランダムのパターン　例:124365879 938471526
+        public List<int> Patterns = new List<int>();//無理押しパターンのリスト　格納例:258,1469
 
         public Result(int ram)
         {
