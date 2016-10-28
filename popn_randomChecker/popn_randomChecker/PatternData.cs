@@ -5,10 +5,10 @@ namespace popn_randomChecker
     //同時押しのデータを格納するクラス
     class PatternData
     {
-        //bool[]型とint型のデーｔ
+        //bool[]型とint型のデータ
         //bool[] [9]の配列　ポップ君の落ちてくる場所をtrue　それ以外はfalse
         public bool[] boolArrayData { get; protected set; }
-        //int ポップ君の落ちてくる場所の番号　例：123,19
+        //int ポップ君の落ちてくる場所の番号　例：左白左黄左緑=>123, 左白右白=>19
         public int intData { get; protected set; }
         //繰り返される回数
         public int count { get; protected set; } = 1;
@@ -19,6 +19,8 @@ namespace popn_randomChecker
             boolArrayData = convertToBooleanArray(intdata);
         }
 
+        //引数のデータと同じデータかを比較する
+        //同じデータである場合count++
         public bool isSameData(int intdata)
         {
             bool isSame = (this.intData == intdata);
@@ -30,6 +32,7 @@ namespace popn_randomChecker
             return isSame;
         }
 
+        //intdataをbool配列に変換する
         private bool[] convertToBooleanArray(int num)
         {
             bool[] b = new bool[] {false, false, false, false, false, false, false, false, false};
@@ -44,7 +47,6 @@ namespace popn_randomChecker
             return b;
         }
 
-        
         public override string ToString()
         {
             return "Pattern : " + intData + Environment.NewLine
