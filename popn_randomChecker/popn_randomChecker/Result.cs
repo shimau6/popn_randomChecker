@@ -29,12 +29,18 @@ namespace popn_randomChecker
             Patterns.AddRange(patterns);
         }
 
+        //CSVっぽい書式で出力する
         public override string ToString()
         {
-            string a = ramPattern.ToString();
+            string pat = "";
+            for(int i = 0;i < Patterns.Count; i++)
+            {
+                pat += Patterns[i].ToString() + ",";
+            }
 
-            return "Pat:" + ramPattern.ToString()
-                + " Count;" + Patterns.Count;
+            return ramPattern.ToString() + ","
+                +  Patterns.Count + ","
+                +  pat;
         }
     }
 }
